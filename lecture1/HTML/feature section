@@ -1,0 +1,64 @@
+Raw Problem
+Create a Features section where features will be showcased with necessary headings, divs and Images with feature logos and feature descriptions.
+
+Use the following tags in proper flow:
+1. <section> tag to hold all the content for the Feature Section
+2. <h1> tag that holds the section heading of 'Awesome Features'
+3. <div> tag that groups all the tags associated with a single feature
+4. For each feature use -
+4.1 <img> tag for feature's image
+4.2 <h3> tag for feature's name
+4.1 <p> tag for feature's description
+
+/////////////////////////////////////////////
+<!DOCTYPE html>
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+RD each attributes and wr it used in code
+-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <section>
+            <h1> Awesome Features </h1>
+            <div>
+                
+                <img src="" >
+                <h3> 365 DAYS/YEAR </h3>
+                <p> 
+                    Never cook again! We really mean that. 
+                    Our subscription plans include up to 365 
+                    days/yers coverage. You can also choose 
+                    to order more flexibly if that’s your style.
+                </p>
+
+                <img src="" alt=“icon2”>
+                <h3> 30 MINUTES OR FREE </h3>
+                <p>
+                    You are only twenty minutes away from your 
+                    delicious and super healthy meals delivered 
+                    right yo your home. We work with the best 
+                    chefs in each town to ensure that you’re 
+                    100% happy.
+                </p>
+
+                <img src="" alt=“icon3”>
+                <h3> 100% ORGANIC </h3>
+                <p>
+                    All our vegetables are fresh, organic and local. 
+                    Animals are raised without added hormones or 
+                    antibiotics. Good for your health, the environment, 
+                    and it also tastes better.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
+
