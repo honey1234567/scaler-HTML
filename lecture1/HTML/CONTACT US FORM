@@ -1,0 +1,41 @@
+Create the ‘Contact Us’ Form for a website which should include the following:
+
+1. Name input (input of text type and 'name' as id)
+2. Email input (input of email type and 'email' as id)
+3. A drop-down input (utilising select tag with 'find' as id)
+3.1. Label is 'How did you find us?' with options as 'friends', 'search', 'ads', and 'others'
+4. Message input (a textarea with 'message' as id)
+5. A check box for terms and conditions (input of 'checkbox' type)
+5.1. Followed by a span consisting 'I have read and agree with all the Privacy Policy and Terms Conditions'
+6. and a submit button (an input of submit type)
+
+//////////////////////////////////////////////////////////
+<!DOCTYPE html>
+<!-- rd id and for -->
+<html>
+    <body>
+    
+    <h2>Contact Us</h2>
+    <form action="#">
+        <label for="name">Name</label><br>
+        <input type="text" id = "name" placeholder="Your Name"><br>
+        <label for="email">Email</label><br>
+        <input type="text" id = "email" placeholder="Your Email"><br>
+        <label for="find">How did you find us?</label><br>
+        <select id="find">
+            <option value="friends">Friends</option>
+            <option value="search">Search</option>
+            <option value="ads">Ads</option>
+            <option value="others">Others</option>
+        </select><br>
+        <label for="message">Drop us a line</label><br>
+        <textarea id="message" placeholder="Your Message"></textarea><br>
+        <input type="checkbox" >
+        <label>I have read and agree with all the Privacy Policy and Terms Conditions.</label><br>
+        <input type = "submit">
+    </form>
+
+
+    </body>
+</html>
+
