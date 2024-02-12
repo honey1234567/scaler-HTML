@@ -1,0 +1,35 @@
+Create a simple Footer section with just using plain HTML.
+
+Use <footer> tag to contain all the components, like:
+
+1. Clickable list items:
+1.1. Use ul>(a>li) format to make an unordered list of clickable links
+1.2. The list should have 'About us', 'ios App', and 'Android App' as list items
+2. Clickable logos:
+2.1. Use a>img format to make a logo (img) clickable
+2.2. There should be four such a>img components
+3. <p> tag containing copyright information.
+///////////////////////////////////////
+<!DOCTYPE html>
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+-->
+<footer>
+      <ul>
+        <a href=""><li>About Us</li></a>
+        <a href=""><li>ios App</li></a>
+        <a href=""><li>About Us</li></a>
+    </ul>
+     <a href="#"><img/></a>
+    <a href="#"><img src="logo2.png" alt="logo2"/></a>
+    <a href="#"><img src="logo3.png" alt="logo3"/></a>
+    <a href="#"><img src="logo4.png" alt="logo4"/></a>
+     <p>Copyright 2019 EVERYONE. All rights reserved</p>
+</footer>
