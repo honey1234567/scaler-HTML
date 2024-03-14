@@ -1,0 +1,38 @@
+DEEP copy
+let dog={
+    name:'A',
+    addr:{
+        street:'21312'
+    },
+    city:["A","B",{
+    "color": "purple"},[12321]]
+}
+let copy = makeDeepCopy(dog);
+      function makeDeepCopy(object) {
+          let copy = Array.isArray(object)?[]:{};
+          for(let k  in object){
+              if(Array.isArray(object[k])){
+                  //will only work for 1D  city: [ 'A', 'B' ]
+                  copy[k] = [...object[k]];
+                  //if array also has object inside it then do //below extra
+                  for(let i=0;i<copy[k].length;i++ ){
+                      if(typeof copy[k][i] == 'object'){
+                          copy[k][i] = makeDeepCopy(copy[k][i]);
+                      }
+                      //nested array
+                      if(Array.isArray(copy[k][i])){
+                           copy[k][i] = makeDeepCopy(copy[k][i]);
+                      }
+                  }
+              }
+           else if(typeof object[k] != "object"){
+           copy[k] = object[k];
+          }else{
+          copy[k] = makeDeepCopy(object[k]);
+          }
+          }
+          return copy;
+          }
+        copy.city[2].color ='blue';
+         copy.city[3][0] ='blue';
+        console.log(copy,dog  );
