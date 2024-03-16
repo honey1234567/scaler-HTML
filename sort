@@ -1,0 +1,31 @@
+function sortLibrary(library) {
+
+function compareTitles(a, b) {</div>
+
+if (a.title > b.title) {</div>
+
+return 1;</div>
+
+} else if (a.title < b.title) {</div>
+
+return -1;</div>
+
+} else {</div>
+
+return 0;</div>
+
+}</div>
+
+}</div>
+
+return library.sort(compareTitles);</div> }
+
+// Example usage:
+const library = [
+{ author: ‘Bill Gates’, title: ‘The Road Ahead’, libraryID: 1254 },
+{ author: ‘Steve Jobs’, title: ‘Walter Isaacson’, libraryID: 4264 },
+{ author: ‘Suzanne Collins’, title: ‘Mockingjay: The Final Book of The Hunger Games’, libraryID: 3245 }
+];
+
+const sortedLibrary = sortLibrary(library);
+console.log(sortedLibrary);
