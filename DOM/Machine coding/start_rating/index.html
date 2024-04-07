@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>Star Rating</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Star Rating</h1>
+        <div class="star-container" id="star-container">
+            <div class="star" idx="1">&#9733;</div>
+            <div class="star" idx="2">&#9733;</div>
+            <div class="star" idx="3">&#9733;</div>
+            <div class="star" idx="4">&#9733;</div>
+            <div class="star" idx="5">&#9733;</div>
+        </div>
+        <h2>Rating Count: <span id="count">0</span></h2> 
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
+
+let array = [[1, 2], [3, 4], [5, 6, [0]], [7, [8, 9, 10, [11, 12, 13]]]];
+let flattenedArray = array.flat(Infinity);
+console.log("Flattened Array is "+flattenedArray); function callBackFn(acc, element) {
+return acc.concat(element);
+}
+Array.prototype.myReduce = function(logic, initialValue) {
+let array = this;
+let acc = initialValue;
+for (let index = 0; index < array.length; index++) {
+acc = logic(acc, array[index]);
+}
+return acc;
+}
+let flattenedArray2 = array.myReduce(callBackFn, []);
+console.log("Flattened Array is "+flattenedArray2);
+
+Q3. JS Lecture 1: A1 - Mystery E-commerce lld2
