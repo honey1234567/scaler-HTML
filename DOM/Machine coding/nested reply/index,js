@@ -1,0 +1,47 @@
+const container=document.querySelector(".container");
+
+container.addEventListener("click",handleClick);
+function handleClick(e){
+    const targetEle=e.target;
+    // console.log(targetEle);
+    if(targetEle.classList.contains("reply")){
+        createReply(e)
+    }
+    else if(targetEle.classList.contains("btn-submit")){
+        createComment(e);
+    }
+}
+
+function createReply(e){
+    //create ele 
+    const replyContainer=document.createElement("div");
+    const input=document.createElement("input");
+    const button=document.createElement("button");
+
+    //set attributes
+    replyContainer.setAttribute("class","comment-reply-container")
+    input.setAttribute("type","text")
+    input.setAttribute("placeholder","Write your comment")
+    button.setAttribute("class","btn-submit")
+    button.innerText="POST"
+
+    //appen child
+    replyContainer.appendChild(input)
+    replyContainer.appendChild(button)
+    e.target.parentNode.appendChild(replyContainer)
+
+}
+
+function createComment(e){
+    const commentContainer=document.createElement("div");
+    commentContainer.setAttribute("class","comment-container");
+    const comment=e.target.previousElementSibling.value;
+    commentContainer.innerHTML=`<div class="comment-card">
+    <div class="comment_text">${comment}</div>
+    <div class="reply">Reply</div>
+</div>`;
+const replyContainer=e.target.parentNode;
+const commentCard=replyContainer.parentNode;
+                        //new child,        old child
+commentCard.replaceChild(commentContainer,replyContainer)
+}
