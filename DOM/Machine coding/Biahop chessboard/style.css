@@ -1,0 +1,61 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+html,
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+
+h1{
+    text-align: center;
+}
+#table{
+    margin: 0 auto;
+}
+.box{
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid black;
+}
+
+.black{
+    background-color: black;
+}
+
+.white{
+    background-color: white;
+}
+
+.green{
+    background-color:rgb(115,149,82);
+}
+
+.lightgreen{
+    background-color: rgb(235,236,208);
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
