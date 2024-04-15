@@ -1,0 +1,17 @@
+.auto-complete{
+    border: 2px solid red;
+    width: 30rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#search-input{
+    width: 90%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* .suggestion-box{
+
+} */
