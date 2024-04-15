@@ -1,0 +1,29 @@
+// const input="India"
+// const url=`https://restcountries.com/v3.1/name/${input}`
+
+// console.log("Before");
+// const dataPromise= fetch(url);
+// dataPromise.then(res=>{
+//     console.log(res);
+//     // console.log( res.json()); return a promise
+//     return res.json()
+
+// })
+// .then(data=>{
+//     console.log(data);
+// })
+
+// console.log("After");
+
+async function getCountries(keyword){
+    const resp= await fetch(`https://restcountries.com/v3.1/name/${keyword}`);
+    const data= await resp.json();
+    return data;
+}
+
+export function sum(x,y){
+    return x+y;
+}
+
+
+export default getCountries
