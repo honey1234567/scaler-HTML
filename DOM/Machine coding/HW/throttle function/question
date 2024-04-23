@@ -1,0 +1,24 @@
+Raw Problem
+Implement a Throttle Function in JavaScript
+
+In this coding challenge, you will practice implementing a throttle function in JavaScript. After you've learnt about throttling, this exercise will give you hands-on experience in creating a functional throttle utility.
+
+Instructions:
+You are provided with a partially completed function named throttle. Your task is to complete the implementation to create a functional throttle utility.
+The throttle function should take two arguments: fn (the function to be throttled) and time (the time interval in milliseconds).
+Test your throttle function with different time intervals and functions.
+
+Important Pointers:
+Throttling is useful in scenarios where you want to limit the frequency of a function's execution to a specified time interval.
+Be sure to capture the function's context (this) and arguments inside the inner function.
+Experiment with different functions and time intervals to see how the throttle function behaves.
+
+Function Signature and Test Case:
+function throttle(fn, time) {
+}
+// Test Cases
+
+const throttledFunc = throttle((value) => console.log(value), 200);
+
+throttledFunc("First call"); // Should log
+throttledFunc("Second call"); // Should not log
