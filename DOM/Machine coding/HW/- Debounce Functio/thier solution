@@ -1,0 +1,16 @@
+// Complete the function below
+function debounce(func, wait) {
+  let timer = null; // Initialize the timer variable
+
+  // Return the debounced function
+  return function(...args) {
+    // Clear any existing timer
+    window.clearTimeout(timer);
+
+    // Set a new timer to execute the function after the specified interval
+    timer = window.setTimeout(() => {
+      // Call the original function with the provided arguments and context
+      func.call(this, ...args);
+    }, wait);
+  };
+}
