@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Buy</title>
+</head>
+
+<body>
+    <p></p>
+    <!-- WARNING:
+        Don't make any changes outside the given function. (would fail test cases)
+        Write the required code and return the correct answer. -->
+    <script id="solution">
+        // complete the debounce function given below
+    function debounce(func, wait) {
+        let timeout
+        return function(...args){
+        clearTimeout(timeout)
+        timeout = setTimeout(()=>{
+        func.apply(this,args)
+        }, wait)
+        }
+        }
+    </script>
+</body>
+
+</html>
