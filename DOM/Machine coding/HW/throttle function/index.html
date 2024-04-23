@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Buy</title>
+</head>
+
+<body>
+    <p></p>
+    <!-- WARNING:
+        Don't make any changes outside the given function. (would fail test cases)
+        Write the required code and return the correct answer. -->
+
+<script id="solution">
+        // complete the throttle function given below
+        function throttle(fn, time) {
+            let wait = false; //initially do not wait, direct execute.
+            return (...args) => {
+                if(wait) //when wait == true (waiting period), do not execute
+                    return;
+                wait = true; //when wait == false, execute function and set wait as true(waiting period)
+                fn(...args);
+                //or u can do with apply
+                setTimeout(() => {
+                    wait = false; //after timeout completed we stop wait period
+                }, time);
+            }
+        }
+    </script>
+</body>
+
+</html>
