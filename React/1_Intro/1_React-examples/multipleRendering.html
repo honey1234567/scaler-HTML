@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <!-- algorithm to efficiently create and manage FE  -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react dom -> uses react to update the dom  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel -> converts jsx into js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- while aplication lives inside this root -->
+    <div id="root"></div>
+    <script type="text/babel">
+        //component -> first letter needs to be capital 
+        // function which returns html 
+        //component is nothing but a custom html tag 
+
+        //this is possible because of jsx 
+        function Hello(propsObj){
+            console.log(propsObj);
+            const{name,age}=propsObj
+            return <div id="section">
+                 <h1 id="heading">Hi my name is {name} and my age is {age}</h1>
+                </div>
+        }
+
+        function AllHello(){
+            return <div>
+                <Hello name={"Angeline"} age={23}></Hello>
+                <Hello name={"Ananth"} age={25}></Hello>
+                <Hello name={"Shreya"} age={29}></Hello>
+                <Hello name={"Krishna"} age={44}></Hello>
+                <Hello name={"Pranay"} age={12}></Hello>
+                </div>
+        }
+
+        ReactDOM.render(<AllHello></AllHello>,document.getElementById("root"))
+    </script>
+    
+</body>
+</html>

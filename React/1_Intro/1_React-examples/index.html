@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <!-- algorithm to efficiently create and manage FE  -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react dom -> uses react to update the dom  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel -> converts jsx into js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- while aplication lives inside this root -->
+    <div id="root"></div>
+    <script type="text/babel">
+        //component -> first letter needs to be capital 
+        // function which returns html 
+        //component is nothing but a custom html tag 
+
+        //this is possible because of jsx 
+        function Hello(propsObj){
+            // let name="Scaler"
+            // return <div id="section">
+            //     <h1 id="heading">Hi i am {name} Code , thanks Babel</h1>
+            //     </div>
+            console.log(propsObj);
+            const{name}=propsObj
+            return <div id="section">
+                 <h1 id="heading">Hi my name is {name} and my age is {propsObj.age}</h1>
+                </div>
+        
+            // const h1=React.createElement("h1",{id:"heading"},"Hi i am React Code , thanks Babel");
+            // const div=React.createElement("div",{id:"section"},h1);
+            // console.log(div);
+            // return div
+
+        }
+
+
+
+        ReactDOM.render(<Hello name={"Angeline"} age={23}></Hello>,document.getElementById("root"))
+    </script>
+    `
+</body>
+</html>

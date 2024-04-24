@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <!-- algorithm to efficiently create and manage FE  -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react dom -> uses react to update the dom  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel -> converts jsx into js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- while aplication lives inside this root -->
+    <div id="root"></div>
+    <script type="text/babel">
+        let stationery=["Pen","Pencil","Rulers","Compass"];
+        const liItemsArr=[];
+        for(let i=0;i<stationery.length;i++){
+            let item=stationery[i];
+            const liItem=<li>{item}</li>;
+            liItemsArr.push(liItem)
+        }
+        console.log(liItemsArr);
+        function Hello(propsObj){
+            // return <ul>{liItemsArr}
+            //     </ul>
+            return <ul>
+                {stationery.map((item,idx)=>{
+                    return <li key={idx}>{item}</li>
+                    })
+                }</ul>
+        }
+
+
+
+        ReactDOM.render(<Hello></Hello>,document.getElementById("root"))
+    </script>
+    
+</body>
+</html>
