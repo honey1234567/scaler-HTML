@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- to efficiently create and manage FE -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- to render ele  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- translator -> jsx-> js  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //create UI -> component
+        function Counter(){
+            // let arr=React.useState(10);
+            // let count=arr[0]; // intial value of count 
+            // let fn=arr[1]; //to update count value 
+            // console.log(arr);
+            const [count,setCount]=React.useState(10);
+            const increment=()=>{
+                console.log("value incremented");
+                //it takes the state as arguement and then we can update the state using this function , we cannot update the state directly. we need setCount function to update the state . 
+                setCount(count+1);
+            }
+            const decrement=()=>{
+                console.log("value decremented");
+                if(count<1) return 
+                 setCount(count-1);
+            }
+            return (
+                <div>
+                    <button onClick={increment}>+</button>
+                    <p>{count}</p>
+                    <button onClick={decrement}>-</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<Counter></Counter>,document.getElementById("root"))
+    </script>
+    
+</body>
+</html>
+
+
+<!-- let count=0;
+document.getElmt(p).innerText=count;
+
+count++;
+count--; -->
+
