@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- to efficiently create and manage FE -->
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+      <!-- to render ele  -->
+      <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+      <!-- translator -> jsx-> js  -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //create UI -> component
+        function InputContainer(){
+            const[inputValue,setInputValue]=React.useState("");
+            const handleValue=(e)=>{
+                console.log("input value getting updated");
+                console.log(e.target.value); //Ab
+                let text=e.target.value.toUpperCase(); //AB
+                setInputValue(text);
+            }
+            return (
+                <>
+                    <input onChange={handleValue} type="text" ></input>
+                    <button>Add</button>
+                </>
+            )
+        }
+        ReactDOM.render(<InputContainer></InputContainer>,document.getElementById("root"))
+    </script>
+</body>
+</html>
