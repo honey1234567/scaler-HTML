@@ -1,0 +1,9 @@
+Task 1:
+Whenever a particular color is clicked from the toolbox =>
+1.1 Remove all the existing tickets from Document.
+1.2 Only the tickets with the assigned priority colors should be added to the Document.
+
+Task 2:
+Whenever any of the color is double clicked =>
+1.1 Remove all the existing tickets from Document.
+1.2 All the tickets (regardless of color) should be added to the Document.
