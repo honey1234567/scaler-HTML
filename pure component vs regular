@@ -1,0 +1,36 @@
+
+Regular Component: Re-renders whenever its parent component re-renders or when its state or props change, even if the changes don’t affect the component’s output.
+Pure Component: Implements a shallow comparison in shouldComponentUpdate and only re-renders when there are changes in its state or props.
+Performance Optimization:Pure components are specifically designed for performance optimization by minimizing unnecessary renders through automatic prop comparison.Regular components, both functional and class-based, might re-render even if props or state don't change, leading to potential performance issues.
+Shallow Comparison:Pure components perform shallow comparisons of props to determine if a re-render is necessary.Regular components, especially class components, might re-render even if props or state objects have the same values but are different instances.
+Usage with Hooks:Pure components are not related to hooks and are more about automatic memoization of functional components.Regular components, especially functional components, can now use hooks for state and lifecycle management.
+What is a Regular Component in React?
+A regular Component in React is a class-based component that extends the React.Component class. Regular Components have access to the component lifecycle methods and can manage their state. By default, a regular Component will re-render every time its parent component re-renders or when its own state or props change.
+import React, { Component } from 'react';
+class RegularComponent extends Component {
+  render() {
+    return <div>{this.props.message}</div>;
+  }
+}
+What is a PureComponent in React?
+A PureComponent in React is a class-based component that extends the React.PureComponent class. Like regular Components, PureComponents have access to the component lifecycle methods and can manage their state. However, PureComponents implement the shouldComponentUpdate lifecycle method, which performs a shallow comparison of the component's current props and state with the next props and state. If there are no changes, the PureComponent skips the re-render, optimizing performance by reducing unnecessary updates.
+import React, { PureComponent } from 'react';
+class MyPureComponent extends PureComponent {
+  render() {
+    return <div>{this.props.message}</div>;
+  }
+}
+When to Use PureComponent
+Using PureComponent can help optimize the performance of your React application by reducing unnecessary renders. Consider using PureComponent in the following scenarios:
+When a component’s output solely depends on its state and props, and there are no side effects, such as network requests or interactions with the DOM.
+When a component receives complex data structures as props, and you can ensure that changes only occur at the top level, as PureComponent performs a shallow comparison.
+Keep in mind that PureComponent may not be suitable for components with deep data structures or components that depend on functions or objects created during render, as PureComponent’s shallow comparison might not detect changes in these cases.
+
+When to Use a Regular Component
+In some cases, using a regular Component is more appropriate:
+When a component’s output depends on external factors, such as global state, network requests, or interactions with the DOM, which may not be captured by PureComponent’s shallow comparison.
+When a component receives deep data structures as props, and changes can occur at any level within the structure. In this case, PureComponent’s shallow comparison may not detect changes, leading to stale renders.
+When you want to implement custom logic for shouldComponentUpdate, such as deep comparison or other optimizations based on your application's specific requirements.
+Conclusion
+Understanding the difference between PureComponent and a regular Component is crucial for optimizing your React application’s performance. While PureComponent can help reduce unnecessary renders and improve performance in certain scenarios, it’s essential to recognize when using a regular Component is more suitable.
+As you continue to develop your React applications, consider each component’s requirements and use the appropriate component type to ensure optimal performance. Remember that PureComponent performs a shallow comparison, which may not be suitable for all situations, and that regular Components provide greater flexibility in controlling when the component should update.
